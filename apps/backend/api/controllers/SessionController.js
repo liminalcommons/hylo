@@ -273,6 +273,24 @@ module.exports = {
     }
   },
   
+  // Dev-only login endpoint (only works when NODE_ENV=development)
+  devLogin: async function (req, res) {
+    if (process.env.NODE_ENV !== 'development') {
+      return res.status(404).send('Not found')
+    }
+    const userId = req.param('u') || 1
+    try {
+      const user = await User.find(userId)
+      if (!user) return res.status(404).send('User not found')
+      UserSession.login(req, user, 'dev')
+      return req.method === 'GET'
+        ? res.redirect('/app')
+        : res.ok({ success: true, userId: user.id, name: user.get('name') })
+    } catch (e) {
+      return res.status(500).send(e.message)
+    }
+  },
+
   // these are here for testing
   findUser,
   upsertLinkedAccount

@@ -50,6 +50,10 @@ module.exports.policies = {
     '*': 'sessionAuth'
   },
 
+  HyloBotController: {
+    chat: 'sessionAuth'
+  },
+
   AdminSessionController: {
     create:  true,
     oauth:   true,

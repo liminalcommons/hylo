@@ -1,0 +1,4 @@
+! Corepack is about to download https://repo.yarnpkg.com/4.9.2/packages/yarnpkg-cli/bin/yarn.js
+[31m[1mUsage Error[22m[39m: Couldn't find the node_modules state file - running an install might help (findPackageLocation)
+
+[1m$ [22myarn run [--inspect] [--inspect-brk] [-T,--top-level] [-B,--binaries-only] [--require #0] <scriptName> ...

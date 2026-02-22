@@ -27,6 +27,7 @@ module.exports.routes = {
   'GET    /noo/hook/batchCommentForm':                    'CommentController.createBatchFromEmailForm',
   'POST   /noo/hook/batchCommentForm':                    'CommentController.createBatchFromEmailForm',
 
+  'GET    /noo/dev/login':                                'SessionController.devLogin',
   'POST   /noo/login':                                    'SessionController.create',
   'GET    /noo/login/token':                              'SessionController.createWithToken',
   'POST   /noo/login/token':                              'SessionController.createWithToken',
@@ -74,6 +75,8 @@ module.exports.routes = {
   'GET    /noo/group/:groupSlug/murmurations':            'MurmurationsController.group',
 
   'POST   /noo/upload':                                   'UploadController.create',
+
+  'POST   /noo/hylobot/chat':                              'HyloBotController.chat',
 
   'GET    /noo/export/group':                             'ExportController.groupData',
   'POST   /noo/export/user-account':                      'ExportController.userAccountData'
